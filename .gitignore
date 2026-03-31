@@ -1,0 +1,20 @@
+# Environments
+venv/
+env/
+.env
+
+# Mac / OS generated files
+.DS_Store
+*.DS_Store
+
+# YOLO Weights & Models
+*.pt
+yolov8n.pt
+
+# Python Cache
+__pycache__/
+*.py[cod]
+
+# IDEs
+.idea/
+.vscode/
