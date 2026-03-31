@@ -8,7 +8,8 @@ def main():
     parser = argparse.ArgumentParser(description="Crowd Monitoring System - Calculate foot count in highly congested areas.")
     parser.add_argument("--image", required=True, help="Path to the input image file (e.g., data/sample_crowd.jpg)")
     parser.add_argument("--output", required=True, help="Path to save the annotated output image (e.g., results/output.jpg)")
-    parser.add_argument("--conf", type=float, default=0.25, help="Confidence threshold for person detection (default: 0.25)")
+    parser.add_argument("--conf", type=float, default=0.25, help="Confidence threshold (default: 0.25)")
+    parser.add_argument("--weights", type=str, default="yolov8n.pt", help="YOLO model weights (default: yolov8n.pt for maximum speed)")
     args = parser.parse_args()
 
     if not os.path.exists(args.image):
@@ -22,7 +23,7 @@ def main():
     print("Loading YOLOv8 model for person detection...")
     # Using yolov8n (nano) which is extremely fast and auto-downloads the weights (~6MB) onto the system
     try:
-        model = YOLO("yolov8n.pt")
+        model = YOLO(args.weights)
     except Exception as e:
         print(f"Error initializing YOLO model: {e}", file=sys.stderr)
         sys.exit(1)

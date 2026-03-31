@@ -9,6 +9,7 @@ env/
 
 # YOLO Weights & Models
 *.pt
+yolov8x.pt
 yolov8n.pt
 
 # Python Cache

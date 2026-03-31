@@ -73,17 +73,17 @@ python crowd_monitor.py --image data/sample_crowd.jpg --output results/output_te
 ```
 
 ### What Happens When You Run This?
-1. **Model Download**: On the very first run, YOLO will securely auto-download a tiny pre-trained weights file (`yolov8n.pt`, approx 6 MB) onto your computer automatically.
-2. **Analysis**: The script instantly loads the image via OpenCV and processes it through the advanced YOLOv8 detector searching explicitly for the `person` class in a dense environment.
-3. **Response**: The algorithm will print an analysis breakdown straight to your terminal indicating exact foot limits.
-4. **Visual Result**: It generates and saves a *new* image file located exactly where you pointed it (`results/output_test.jpg`). If you open that file in your file explorer, you'll see every individual correctly boxed in bright green with the total counted overlay on the top left.
+1. **Model Download**: On the very first run, YOLO will securely auto-download a fast, pre-trained AI weights file (`yolov8n.pt`, approx 6 MB) onto your computer.
+2. **Analysis**: The script loads the image via OpenCV and processes it through the advanced YOLOv8 structure, searching explicitly for the `person` class in the environment.
+3. **Response**: The algorithm prints an analysis breakdown directly to your terminal.
+4. **Visual Result**: It generates a *new* image file indicating every counted individual boxed cleanly in bright green with the total counter pinned to the top left.
 
 ### Custom Configurations
-To adjust the confidence threshold of the algorithm (e.g., if you are missing distant people or incorrectly identifying shapes in terrible lighting):
+To adjust the confidence threshold manually, or swap out the AI weights for a different YOLO architecture, you can use flags:
 ```bash
-python crowd_monitor.py --image data/your_image.jpg --output results/out.jpg --conf 0.15
+python crowd_monitor.py --image data/your_image.jpg --output results/out.jpg --conf 0.50 --weights yolov8m.pt
 ```
-*(Default configuration is optimized natively at `0.25`)*
+*(Default configuration is optimized for speed using `yolov8n.pt` and a base `0.25` conf.)*
 
 ---
 
