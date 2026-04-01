@@ -12,6 +12,14 @@ By using the state-of-the-art **YOLOv8 Object Detection Framework** (Ultralytics
 
 ---
 
+## System Architecture
+
+Below is the architectural diagram demonstrating how an input image is processed through our system to generate the final foot traffic count and annotated visual output:
+
+![System Architecture Diagram](assets/architecture.png)
+
+---
+
 ## 1. Prerequisites 
 Before running the project, ensure you have the following installed on your machine:
 - **Python 3.8+** (We strongly suggest Python 3.10)
@@ -53,6 +61,7 @@ pip install -r requirements.txt
 .
 ├── crowd_monitor.py      # Main CLI executable program
 ├── requirements.txt      # Dependency specification file
+├── assets/               # Graphical assets (e.g., architecture diagrams)
 ├── data/
 │   └── sample_crowd.jpg  # Pre-supplied image for testing
 ├── results/              # Directory where the algorithm outputs counted images
